@@ -6,10 +6,8 @@ const GroupList = styled.div`
   height: 400px;
   padding: 10px 20px;
   box-sizing: border-box;
-  p {
-    font-size: 20px;
+  h2 {
     padding-bottom: 15px;
-    border-bottom: 1px solid #000;
   }
 `
 
@@ -19,7 +17,7 @@ const TaskGroup = (props) => {
   return (
     <>
       <GroupList>
-        <p>Tasks:</p>
+        <h2>Tasks</h2>
         <Task 
           tasks={taskList}
           removeTask={remove}

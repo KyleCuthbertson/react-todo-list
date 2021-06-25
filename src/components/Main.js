@@ -15,14 +15,21 @@ const InputArea = styled.div`
 const Main = () => {
 
   const [tasks, setTasks] = useState([{
-      name: "task 1",
+      name: "Study",
       id: 1
     },
     {
-      name: "task 2",
+      name: "Get Milk & Bread",
       id: 2
+    },
+    {
+      name: "Meal Prep",
+      id: 3
+    },
+    {
+      name: "Clean the house",
+      id: 4
     }
-
   ]);
 
   const handleSubmit = (event, id) => {
