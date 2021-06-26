@@ -8,12 +8,16 @@ const Label = styled.label`
 `
 
 const Input = styled.input`
-  min-width: 220px;
+  width: 200px;
+  min-height: 50px;
   margin: 0 auto;
   padding: 5px;
   font-size: 22px;
   border: 0;
-  border-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 `
 
 const InputField = () => {

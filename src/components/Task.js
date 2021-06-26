@@ -28,10 +28,12 @@ const TaskList = styled.ul`
   }
   p {
     font-size: 18px;
+    word-break: break-all;
   }
   button {
     border: 0;
     background: none;
+    padding-left: 5px;
     cursor: pointer;
     i {
       font-size: 20px;
@@ -44,14 +46,13 @@ const Task = (props) => {
 
   const {tasks, removeTask} = props;
 
-  console.log(removeTask);
   return (
     <>
       <TaskList>
         {tasks.map((task) => (
           <li key={task.id}>
             <p>{task.name}</p>
-            <button onClick={() => {removeTask(task.id)}}><i class="fas fa-minus-circle"></i></button>
+            <button onClick={() => {removeTask(task.id)}}><i className="fas fa-minus-circle"></i></button>
           </li>
         ))}
       </TaskList>

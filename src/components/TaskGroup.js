@@ -3,9 +3,9 @@ import Task from './Task';
 
 const GroupList = styled.div`
   width: 100%;
-  height: 400px;
   padding: 10px 20px;
   box-sizing: border-box;
+  max-width: 700px;
   h2 {
     padding-bottom: 15px;
   }
