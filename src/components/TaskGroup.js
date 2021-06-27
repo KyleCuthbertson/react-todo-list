@@ -17,7 +17,7 @@ const TaskGroup = (props) => {
   return (
     <>
       <GroupList>
-        <h2>Tasks</h2>
+        {taskList.length > 0 ? <h2>Tasks</h2> : ""}
         <Task 
           tasks={taskList}
           removeTask={remove}

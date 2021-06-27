@@ -2,14 +2,15 @@ import styled from 'styled-components';
 
 const Label = styled.label`
   display: block;
-  font-size: 24px;
+  font-size: 26px;
   margin-bottom: 15px;
   cursor: pointer;
 `
 
 const Input = styled.input`
-  width: 200px;
+  width: 75%;
   min-height: 50px;
+  max-width: 400px;
   margin: 0 auto;
   padding: 5px;
   font-size: 22px;
