@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {TransitionGroup, CSSTransition} from 'react-transition-group';
 
 const TaskList = styled.ul`
   width: 100%;
@@ -48,15 +49,18 @@ const Task = (props) => {
 
   return (
     <>
-      <TaskList>
+      <TransitionGroup component={TaskList}>
         {tasks.map((task) => (
-          <li key={task.id}>
-            <p>{task.name}</p>
-            <button onClick={() => {removeTask(task.id)}}><i className="fas fa-minus-circle"></i></button>
-          </li>
+          <CSSTransition key={task.id} timeout={300} classNames="transition">
+            <li key={task.id}>
+              <p>{task.name}</p>
+              <button onClick={() => {removeTask(task.id)}}><i className="fas fa-minus-circle"></i></button>
+            </li>
+          </CSSTransition>
         ))}
-      </TaskList>
-    </>
+    </TransitionGroup>
+  
+    </> 
   )
 }
 

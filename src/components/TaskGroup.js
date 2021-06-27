@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+
 import Task from './Task';
 
 const GroupList = styled.div`
   width: 100%;
+  margin: 0 auto;
   padding: 10px 20px;
   box-sizing: border-box;
   max-width: 700px;

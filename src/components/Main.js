@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
 import styled from 'styled-components';
+import { CSSTransition } from 'react-transition-group';
+
 import InputField from './InputField';
 import TaskGroup from './TaskGroup';
 import AddButton from './AddButton';
@@ -12,6 +14,7 @@ const InputArea = styled.div`
   text-align: center;
   box-sizing: border-box;
   max-width: 700px;
+  margin: 0 auto;
 `
 
 const ErrorText = styled.div`
@@ -39,15 +42,14 @@ const Main = () => {
   const addTask = (event) => {
     event.preventDefault();
     let inputValue = document.querySelector("#taskinput").value;
-    console.log(inputValue.length);
     if (inputValue !== "" || inputValue.length !== 0) {
       const timestamp = Date.now();
       setTasks([
-        ...tasks, 
         {
           name: inputValue,
           id: timestamp
-        }
+        },
+        ...tasks
     ]);
     document.querySelector("form").reset();
     setIsError(false);
@@ -55,7 +57,7 @@ const Main = () => {
       setIsError(true);
       setTimeout(function() { // Timeout for error message to show
         setIsError(false);
-      }, 4000);
+      }, 3000);
     }
   }
 
@@ -78,15 +80,14 @@ const Main = () => {
         </InputArea>
       </form>
       
-      {
-        isError ? 
+      
+      <CSSTransition in={isError} timeout={750} classNames="transition" unmountOnExit={true}>
         <ErrorText>
-          <i class="fas fa-exclamation-circle"></i>
+          <i className="fas fa-exclamation-circle"></i>
           <p>Can't leave this empty!</p>
         </ErrorText> 
-        : 
-        ""
-      }
+      </CSSTransition>
+    
 
       <TaskGroup
         taskList={tasks}
