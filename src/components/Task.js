@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
 
 const TaskList = styled.ul`
@@ -40,6 +41,15 @@ const TaskList = styled.ul`
       font-size: 20px;
       color: #FFF;
     }
+  }
+  @media screen and (min-width: 767px) {
+    p {
+      font-size: 24px;
+    }
+    button i {
+      font-size: 28px;
+    }
+    } 
   }
 `
 

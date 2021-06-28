@@ -2,7 +2,7 @@
 
 
 ## Features
-Using Styled components and CSS Transition Groups, this is a mobile-first React.js based "To Do List" application. This app will allow users to create and delete tasks on both Desktop and Mobile.
+Using Styled components and CSS Transition Groups, this is a basic mobile-first React.js "To Do List" application. This app will allow users to create and delete tasks on both Desktop and Mobile.
 
 
 ## Available Scripts

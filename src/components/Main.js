@@ -27,9 +27,17 @@ const ErrorText = styled.div`
   padding: 15px 0;
   background: #701e1e;
   color: #FFF;
+  max-width: 660px;
   i {
     font-size: 24px;
     padding-right: 7px;
+  }
+  @media screen and (min-width: 767px) {
+    font-size: 28px;
+    i {
+      font-size: 30px;
+      padding-right: 10px;
+    }
   }
 `
 

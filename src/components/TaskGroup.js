@@ -15,8 +15,14 @@ const GroupList = styled.div`
     padding: 0 5px;
     margin-bottom: 10px;
   }
-  h2 {
-    
+  @media screen and (min-width: 767px) {
+    margin-top: 20px;
+    h2 {
+      font-size: 36px;
+    }
+    p {
+      font-size: 28px;
+    }
   }
 `
 

@@ -11,12 +11,17 @@ const Button = styled.button`
   color: #FFF;
   font-size: 22px;
   background: none;
+  cursor: pointer;
+  @media screen and (min-width: 767px) {
+    font-size: 30px;
+  }
 `
 
 
 const AddButton = (props) => {
 
   const { add } = props;
+
   return (
     <>
       <Button onClick={add}><i className="fas fa-plus"></i></Button>

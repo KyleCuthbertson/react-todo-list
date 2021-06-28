@@ -5,6 +5,10 @@ const Label = styled.label`
   font-size: 26px;
   margin-bottom: 15px;
   cursor: pointer;
+  @media screen and (min-width: 767px) {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
 `
 
 const Input = styled.input`
@@ -19,6 +23,9 @@ const Input = styled.input`
   border-bottom-left-radius: 2px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  @media screen and (min-width: 767px) {
+    font-size: 30px;
+  }
 `
 
 const InputField = () => {
