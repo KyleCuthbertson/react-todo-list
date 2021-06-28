@@ -43,3 +43,26 @@ h1, h2, h3, h4, h5, h6, * {
   transform: translate(0, -10px);
   transition: all 300ms ease-in;
 }
+
+
+.transitionTask-enter {
+  opacity: 0;
+  transform: translate(-50px, 0);
+}
+
+.transitionTask-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: all 300ms ease-in;
+}
+
+.transitionTask-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.transitionTask-exit-active {
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: all 300ms ease-out;
+}

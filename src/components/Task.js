@@ -51,7 +51,7 @@ const Task = (props) => {
     <>
       <TransitionGroup component={TaskList}>
         {tasks.map((task) => (
-          <CSSTransition key={task.id} timeout={300} classNames="transition">
+          <CSSTransition key={task.id} timeout={300} classNames="transitionTask">
             <li key={task.id}>
               <p>{task.name}</p>
               <button onClick={() => {removeTask(task.id)}}><i className="fas fa-minus-circle"></i></button>

@@ -37,26 +37,36 @@ const Main = () => {
 
   const [tasks, setTasks] = useState([]);
   const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   // Add task to list
   const addTask = (event) => {
     event.preventDefault();
     let inputValue = document.querySelector("#taskinput").value;
     if (inputValue !== "" || inputValue.length !== 0) {
-      const timestamp = Date.now();
-      setTasks([
-        {
-          name: inputValue,
-          id: timestamp
-        },
-        ...tasks
-    ]);
-    document.querySelector("form").reset();
-    setIsError(false);
+      if (tasks.length < 15) {
+        const timestamp = Date.now();
+        setTasks([
+          {
+            name: inputValue,
+            id: timestamp
+          },
+          ...tasks
+      ]);
+      document.querySelector("form").reset();
+      setIsError(false);
+      }
+      else {
+        setIsError(true);
+        setErrorMessage("Maximum tasks reached!");
+        console.log("error");
+      }
     } else {
       setIsError(true);
+      setErrorMessage("Can't leave this empty!");
       setTimeout(function() { // Timeout for error message to show
         setIsError(false);
+        setErrorMessage(null);
       }, 3000);
     }
   }
@@ -84,7 +94,7 @@ const Main = () => {
       <CSSTransition in={isError} timeout={750} classNames="transition" unmountOnExit={true}>
         <ErrorText>
           <i className="fas fa-exclamation-circle"></i>
-          <p>Can't leave this empty!</p>
+          <p>{errorMessage}</p>
         </ErrorText> 
       </CSSTransition>
     

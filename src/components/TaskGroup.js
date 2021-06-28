@@ -8,8 +8,15 @@ const GroupList = styled.div`
   padding: 10px 20px;
   box-sizing: border-box;
   max-width: 700px;
+  .numOfTasks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
   h2 {
-    padding-bottom: 15px;
+    
   }
 `
 
@@ -19,7 +26,7 @@ const TaskGroup = (props) => {
   return (
     <>
       <GroupList>
-        {taskList.length > 0 ? <h2>Tasks</h2> : ""}
+        {taskList.length > 0 ? <div className="numOfTasks"><h2>Tasks</h2><p>{taskList.length}/15</p></div> : ""}
         <Task 
           tasks={taskList}
           removeTask={remove}
